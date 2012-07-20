@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <script src="http://zeptojs.com/zepto.js"></script>
+  <script src="./zepto.ghostclick.min.js"></script>
+
+  <a href="#fixed" class="fixed">Fixed</a>
+  <a href="#not-fixed" class="not-fixed">Not fixed</a>
+
+  <script>
+    $('.not-fixed').on('tap click', function () {
+        alert('hi');
+    });
+
+    $('.fixed').on('tap click', function () {
+        alert('hi');
+        return false;
+    });
+  </script>
+</html>
