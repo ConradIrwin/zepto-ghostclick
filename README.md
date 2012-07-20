@@ -17,11 +17,11 @@ the end of your `'tap'` handlers to prevent duplicate `'click'` events.
 
   <script>
     $('.not-fixed').on('tap click', function () {
-        alert('This alert will appear twice on mobile devices!');
+        $('body').append('<div>This message will appear twice on mobile devices!</div>');
     });
 
     $('.fixed').on('tap click', function () {
-        alert('This alert will appear only once everywhere!');
+        $('body').append('<div>This message will appear only once everywhere!</div>');
         return false;
     });
   </script>
@@ -46,6 +46,9 @@ Bugs
 
 Even though the click event doesn't fire, any link still appears "active" for a few tens
 of milliseconds.
+
+If an alert box is shown for over a second between the tap event and the click event, the
+click event will still fire.
 
 Meta-fu
 =======

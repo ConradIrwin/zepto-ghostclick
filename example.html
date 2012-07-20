@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+  <title>zepto.ghostclick.js example</title>
   <script src="http://zeptojs.com/zepto.js"></script>
   <script src="./zepto.ghostclick.min.js"></script>
 
@@ -8,11 +9,11 @@
 
   <script>
     $('.not-fixed').on('tap click', function () {
-        alert('hi');
+        $('body').append('<div>This message will appear twice on mobile devices!</div>');
     });
 
     $('.fixed').on('tap click', function () {
-        alert('hi');
+        $('body').append('<div>This message will appear only once everywhere!</div>');
         return false;
     });
   </script>
